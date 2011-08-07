@@ -1,0 +1,46 @@
+*{
+	font-family: Oswald;
+				margin:0;
+	padding:0;
+	font-size:1em;
+}
+body{
+	background:#eff1f4 url('img/white_texture.png');
+}
+div#wrap{
+	width:480px;
+	margin:0 auto;
+	border:1px solid red;
+	overflow:hidden;
+}
+h1{
+	font-size:69px;
+	text-align:center;
+	font-weight:normal;
+}
+ul#buttons{
+	margin:20px 74px 0 74px;
+}
+#buttons a{
+	background:#000;
+	margin:0 0 20px 0;
+	display:block;
+	font-size:35px;
+	padding:8px 0 12px 5px;
+}
+#buttons li{
+	list-style:none;
+}
+#buttons a:after{
+	content:'>';
+	float:right;
+	margin:-15px 5px 0 0;
+	font-size:50px;
+}
+#buttons li, #buttons a{
+	color:#FFF;
+	text-decoration:none;
+}
+/*div.page{
+	position:fixed;
+}*/
