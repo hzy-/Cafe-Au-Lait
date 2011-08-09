@@ -10,8 +10,10 @@ def submit(request):
 			message = "This is an XHR POST request"
 			# Here we can access the POST data
 			#print request.POST
-			o = Order(json = request.raw_post_data)
+			arr = simplejson.loads(request.raw_post_data)
+			o = Order(json = arr)
 			o.save()
+			message = arr
 	else:
 		message = "No XHR"
 	return HttpResponse(message)
