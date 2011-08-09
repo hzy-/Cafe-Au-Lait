@@ -1,9 +1,18 @@
+/*reset / globals*/
 *{
 	font-family: Oswald;
-				margin:0;
+	margin:0;
 	padding:0;
 	font-size:1em;
+	color:#000;
+	text-decoration:none;
 }
+/*clearfix*/
+	.clearfix:after {content: ".";display: block;clear: both;visibility: hidden;line-height: 0;height: 0;}
+	.clearfix {display: inline-block;}
+	html[xmlns] .clearfix {display: block;}
+	* html .clearfix {height: 1%;}
+/*rest of the css*/
 body{
 	background:#eff1f4 url('img/white_texture.png');
 }
@@ -13,20 +22,23 @@ div#wrap{
 	border:1px solid red;
 	overflow:hidden;
 }
-h1{
-	font-size:69px;
+h1, h1>a{
+	font-size:80px;
 	text-align:center;
 	font-weight:normal;
 }
 ul#buttons{
-	margin:20px 74px 0 74px;
+	margin:20px 46px 0 46px;
 }
-#buttons a{
+#buttons a, #buttons label{
 	background:#000;
 	margin:0 0 20px 0;
 	display:block;
-	font-size:35px;
-	padding:8px 0 12px 5px;
+	font-size:40px;
+	padding:8px 0 12px 15px;
+}
+#buttons label{
+	background:#111;
 }
 #buttons li{
 	list-style:none;
@@ -34,13 +46,35 @@ ul#buttons{
 #buttons a:after{
 	content:'>';
 	float:right;
-	margin:-15px 5px 0 0;
+	margin:-15px 10px 0 0;
 	font-size:50px;
 }
-#buttons li, #buttons a{
+#buttons li, #buttons a, #buttons label{
 	color:#FFF;
 	text-decoration:none;
 }
-/*div.page{
-	position:fixed;
-}*/
+#buttons input{
+	border:none;
+	background:none;
+	color:white;
+	width:60px;
+	float:right;
+	margin:-80px 5px 0 0;
+	font-size:35px;
+	text-align:right;
+}
+#dinein_takeaway li, #dinein_takeaway a{
+	display:inline-block;
+	width:190px;
+	text-align:center;
+	padding:0;
+}
+#dinein_takeaway a{
+	padding:8px 0 12px 0;
+}
+#dinein_takeaway a:after{
+ content:'';
+}
+#wrap a#place_order{
+	background:#690202;
+}
