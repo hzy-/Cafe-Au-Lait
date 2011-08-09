@@ -5,8 +5,9 @@
 		<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="style/style.css" />
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<script type="text/javascript" src="https://raw.github.com/douglascrockford/JSON-js/master/json2.js"></script>
 		<script type="text/javascript" src="style/scripts.js"></script>
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=480px, user-scalable=no" />
 	</head>
 	<body>
 		<div id="wrap">
@@ -25,19 +26,21 @@
 						<li><a href="#" id="t_dinein">Dine In</a></li>
 						<li><a href="#" id="t_takeaway">Take Away</a></li>
 					</ul>
-					<ul id="dinein">
-						<li><label for="d_cappuccino">Cappuccino</label><input id="d_cappuccino" type="number" /></li>
-						<li><label for="d_latte">Latte</label><input id="d_latte" type="number" /></li>
-						<li><label for="d_iced">Iced</label><input id="d_iced" type="number" /></li>
-						<li><label for="d_espresso">Espresso</label><input id="d_espresso" type="number" /></li>
-					</ul>
-					<ul id="takeaway">
-						<li><label for="t_cappuccino">Cappuccino</label><input id="t_cappuccino" type="number" /></li>
-						<li><label for="t_latte">Latte</label><input id="t_latte" type="number" /></li>
-						<li><label for="t_iced">Iced</label><input id="t_iced" type="number" /></li>
-						<li><label for="t_espresso">Espresso</label><input id="t_espresso" type="number" /></li>
-					</ul>
-					<li><a href="#" id="place_order">Place Order</a></li>
+					<form id="order">
+						<ul id="dinein">
+							<li><label for="d_cappuccino">Cappuccino</label><input id="d_cappuccino" name="d_cappuccino" type="number" /></li>
+							<li><label for="d_latte">Latte</label><input id="d_latte" name="d_latte" type="number" /></li>
+							<li><label for="d_iced">Iced</label><input id="d_iced" name="d_iced" type="number" /></li>
+							<li><label for="d_espresso">Espresso</label><input id="d_espresso" name="d_espresso" type="number" /></li>
+						</ul>
+						<ul id="takeaway">
+							<li><label for="t_cappuccino">Cappuccino</label><input id="t_cappuccino" name="t_cappuccino" type="number" /></li>
+							<li><label for="t_latte">Latte</label><input id="t_latte" name="t_latte" type="number" /></li>
+							<li><label for="t_iced">Iced</label><input id="t_iced" name="t_iced" type="number" /></li>
+							<li><label for="t_espresso">Espresso</label><input id="t_espresso" name="t_espresso" type="number" /></li>
+						</ul>
+						<li><a href="#" id="place_order">Place Order</a></li>
+					</form>
 				</ul>
 			</div>
 			<div id="p_current_orders" class="page">
