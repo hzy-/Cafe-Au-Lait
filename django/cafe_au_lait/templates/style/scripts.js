@@ -44,10 +44,11 @@ $(document).ready(function(){
 			$.ajax({
 				type: "POST",
 				contentType: 'application/json; charset=utf-8',
-				url: "http://127.0.0.1:8000/orders/submit",
+				url: "/orders/submit/",
 				data: inputs_json,
-				success: function(msg){
+				complete: function(msg){
 					alert( "Data Saved: " + msg );
+					//console.log(msg);
 				}
 			});
 		}
