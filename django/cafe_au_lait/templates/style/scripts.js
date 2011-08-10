@@ -48,7 +48,7 @@ $(document).ready(function(){
 				data: inputs_json,
 				complete: function(msg){
 					alert( "Data Saved: " + msg );
-					//console.log(msg);
+					console.log(msg);
 				}
 			});
 		}
