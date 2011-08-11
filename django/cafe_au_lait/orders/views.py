@@ -18,12 +18,15 @@ def submit(request):
 		elif request.method == 'POST':
 			# Here we can access the POST data
 			itemlist = simplejson.loads(request.raw_post_data)
-			o = Order(tendered="1000")
-			o.save()
+			o = None
 			#loops through the provided json
 			for item in itemlist:
 				if item['value']:
 					if int(item['value']) > 0:
+						#checks if the order exists yet
+						if o == None:
+							o = Order(tendered="1000")
+							o.save()
 						c = Content(order= o, quantity= item['value'])
 						#determines the type of the drink
 						if str(item['name'])[:1] == "d":
@@ -42,7 +45,7 @@ def submit(request):
 def current(request):
 	#checks cache for current &content items, if they're there it gets it from the cache, 
 	#otherwise it runs the sql and then saves the result to the cache.
-	if cache.get_many(['orders_current_current', 'orders_current_content']):
+	if cache.get('orders_current_current') and cache.get('orders_current_content'):
 		x = cache.get_many(['orders_current_current', 'orders_current_content'])
 		current = x['orders_current_current']
 		content = x['orders_current_content']

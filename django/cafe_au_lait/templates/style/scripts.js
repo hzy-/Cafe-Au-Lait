@@ -53,5 +53,23 @@ $(document).ready(function(){
 			});
 		}
 	});
-
+	//current orders page loading
+	//function
+	function load_current_orders(){
+		$.get('/orders/current',
+		function(data){
+			$('div#p_current_orders').empty();
+			$('div#p_current_orders').append(data);
+		});
+	}
+	//loads it when the page is opened
+	$('a#current_orders').click(function(){
+		load_current_orders();
+	});
+	//updates current items list
+	setInterval(function(){
+		if ($('div#p_current_orders').is(":visible")){
+			load_current_orders();
+		}
+	},10000);
 });
