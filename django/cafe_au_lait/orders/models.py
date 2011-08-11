@@ -14,12 +14,3 @@ class Content(models.Model):
 	beverage = models.ForeignKey('beverages.Beverage')
 	takeaway = models.BooleanField()
 	quantity = models.IntegerField()
-
-b = Beverage(name="cappicuno", price="3")
-b.save()
-b = Beverage(name="latte", price="3")
-b.save()
-b = Beverage(name="iced", price="3")
-b.save()
-b = Beverage(name="espresso", price="3")
-b.save()
