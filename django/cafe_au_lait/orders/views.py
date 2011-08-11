@@ -40,17 +40,15 @@ def submit(request):
 	return HttpResponse(message)
 
 def current(request):
-	#checks cache for current (&content) items, if it's there it gets it from the cache, 
+	#checks cache for current &content items, if they're there it gets it from the cache, 
 	#otherwise it runs the sql and then saves the result to the cache.
-	if cache.get('orders_current_current'):
-		current = cache.get('orders_current_current')
+	if cache.get_many(['orders_current_current', 'orders_current_content']):
+		x = cache.get_many(['orders_current_current', 'orders_current_content'])
+		current = x['orders_current_current']
+		content = x['orders_current_content']
 	else:
 		current = Order.objects.filter(current=True)
-		cache.set('orders_current_current', current)
-	
-	if cache.get('orders_current_content'):
-		content = cache.get('orders_current_content')
-	else:
 		content = Content.objects.filter(order__current=True)
+		cache.set('orders_current_current', current)
 		cache.set('orders_current_content', content)
 	return render_to_response('current.html', {"currentitems": current, "contents": content})
