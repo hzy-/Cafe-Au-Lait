@@ -1,0 +1,10 @@
+<ul id="dinein">
+	{% for beverage in beverages %}
+	<li><label for="d_{{ beverage.name }}">{{ beverage.name|capfirst }}</label><input id="d_{{ beverage.name }}" name="d_{{ beverage.id }}" type="number"></li>
+	{% endfor %}
+</ul>
+<ul id="takeaway">
+	{% for beverage in beverages %}
+	<li><label for="t_{{ beverage.name }}">{{ beverage.name|capfirst }}</label><input id="t_{{ beverage.name }}" name="t_{{ beverage.id }}" type="number"></li>
+	{% endfor %}
+</ul>

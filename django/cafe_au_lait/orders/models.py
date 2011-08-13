@@ -5,6 +5,7 @@ class Order(models.Model):
 	date_time = models.DateTimeField(auto_now_add=True)
 	tendered = models.IntegerField()
 	current = models.BooleanField(default=True)
+	table = models.IntegerField()
 
 	def __unicode__(self):
 		return self.date_time

@@ -1,0 +1,120 @@
+/*reset / globals*/
+	*{
+		font-family: Oswald;
+		margin:0;
+		padding:0;
+		font-size:1em;
+		color:#000;
+		text-decoration:none;
+	}
+
+/*clearfix*/
+	.clearfix:after {content: ".";display: block;clear: both;visibility: hidden;line-height: 0;height: 0;}
+	.clearfix {display: inline-block;}
+	html[xmlns] .clearfix {display: block;}
+	* html .clearfix {height: 1%;}
+
+/*rest of the css*/
+
+	/*general stuff*/
+		body{
+			background:#eff1f4 url('img/white_texture.png');
+		}
+		div#wrap{
+			width:480px;
+			margin:0 auto;
+			border:1px solid red;
+			overflow:hidden;
+		}
+		h1, h1>a{
+			font-size:80px;
+			text-align:center;
+			font-weight:normal;
+		}
+		ul#buttons{
+			margin:20px 46px 0 46px;
+		}
+
+	/*Mainly regarding New Order page*/
+		#buttons a, #buttons label{
+			background:#000;
+			margin:0 0 20px 0;
+			display:block;
+			font-size:40px;
+			padding:8px 0 12px 15px;
+		}
+		#buttons label{
+			background:#2a2a2a;
+		}
+		#buttons li{
+			list-style:none;
+		}
+		#buttons a:after{
+			content:'>';
+			float:right;
+			margin:-15px 10px 0 0;
+			font-size:50px;
+		}
+		#buttons li, #buttons a, #buttons label{
+			color:#FFF;
+			text-decoration:none;
+		}
+		#buttons input{
+			border:none;
+			background:none;
+			color:white;
+			width:60px;
+			float:right;
+			margin:-80px 5px 0 0;
+			font-size:35px;
+			text-align:right;
+		}
+
+		#dinein_takeaway li, #dinein_takeaway a{
+			display:inline-block;
+			width:190px;
+			text-align:center;
+			padding:0;
+		}
+		#dinein_takeaway a{
+			padding:8px 0 12px 0;
+		}
+		#dinein_takeaway a:after{
+		 content:'';
+		}
+		#wrap a#place_order{
+			background:#690202;
+		}
+	/*Current Orders*/
+		#p_current_orders>div{
+			background:#2a2a2a;
+			margin:10px 46px;
+			padding:10px 15px;
+		}
+		#p_current_orders>div *{
+			color:#FFF;
+			font-weight:normal;
+		}
+		#p_current_orders>div>h3, #p_current_orders>div>h4, #p_current_orders>div>a{
+			display:inline-block;
+			font-size:25px;
+		}
+		#p_current_orders>div>a, #p_current_orders>div>h4{
+			float:right;
+		}
+		#p_current_orders>div>a{
+			color:#fa0a0a;
+			margin:0 0 0 15px;
+		}
+		#p_current_orders>div>table{
+			border-top:1px solid #a1a1a1;
+			width:100%;
+			margin:5px 0 0 0;
+			padding:10px 0 0 0;
+		}
+		#p_current_orders td:first-child{
+			width:300px;
+		}
+		#p_current_orders td:nth-child(2), #p_current_orders td:nth-child(3){
+			width:30px;
+		}

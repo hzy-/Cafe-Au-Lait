@@ -1,0 +1,22 @@
+{% for order in orders %}
+<div>
+	<h3>Table #{{ order.table }}</h3>
+	<a href="#" id="order_{{ order.id }}">x</a>
+	<h4>3 hours ago</h4>
+	<table><tbody>
+		{% for content in contents %}
+		{% if content.order.id == order.id %}
+		<tr>
+			<td>{{ content.beverage.name|capfirst }}</td>
+			{% if content.takeaway == 1 %}
+			<td>T</td>
+			{% else %}
+			<td></td>
+			{% endif %}
+			<td>{{ content.quantity }}</td>
+		</tr>
+		{% endif %}
+		{% endfor %}
+	</tbody></table>
+</div>
+{% endfor %}
