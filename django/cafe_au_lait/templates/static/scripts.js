@@ -95,19 +95,19 @@ $(document).ready(function(){
 		},10000);
 
 		//completes item when x pressed
-		$("#p_current_orders").click(function(){
-			$(this).fadeOut(200);
-			target = string($(this).id);
+		$(".clear_order").click(function(){
+			//$(this).fadeOut(200);
+			target = $(this).attr('id');
 			json = JSON.stringify(target);
-			alert(json);
-			$.ajax({
+			alert(target);
+		/*	$.ajax({
 				type: "POST",
 				contentType: 'application/json; charset=utf-8',
 				url: "/orders/finish/",
 				data: json,
 				success: function(msg){
 				}
-			});
+			});*/
 		});
 		
 });

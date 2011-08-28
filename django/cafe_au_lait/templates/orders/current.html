@@ -1,7 +1,7 @@
 {% for order in orders %}
 <div>
 	<h3>Table #{{ order.table }}</h3>
-	<a href="#" id="order_{{ order.id }}">x</a>
+	<a href="#" class="clear_order" id="order_{{ order.id }}">x</a>
 	<h4>3 hours ago</h4>
 	<table><tbody>
 		{% for content in contents %}
