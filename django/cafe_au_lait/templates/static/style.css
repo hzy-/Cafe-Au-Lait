@@ -85,8 +85,8 @@
 		#wrap a#place_order{
 			background:#690202;
 		}
-		#takeaway{
-			display:none;
+		#takeaway {
+			display: none;
 		}
 	/*Current Orders*/
 		#p_current_orders>div{
