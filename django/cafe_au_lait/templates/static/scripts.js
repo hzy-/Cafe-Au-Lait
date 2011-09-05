@@ -81,6 +81,14 @@ $(document).ready(function(){
 			function(data){
 				$('div#p_current_orders').empty();
 				$('div#p_current_orders').append(data);
+
+				//binds clear order click event
+				$(".clear_order").click(function() {
+					$(this).parent().hide();
+					$.post('orders/clear/', {order: $(this).attr("id").replace('order_', '')}, function(data){
+						alert("complete!");
+					});
+				});
 			});
 		}
 
@@ -95,19 +103,5 @@ $(document).ready(function(){
 		},10000);
 
 		//completes item when x pressed
-		$(".clear_order").click(function(){
-			//$(this).fadeOut(200);
-			target = $(this).attr('id');
-			json = JSON.stringify(target);
-			alert(target);
-		/*	$.ajax({
-				type: "POST",
-				contentType: 'application/json; charset=utf-8',
-				url: "/orders/finish/",
-				data: json,
-				success: function(msg){
-				}
-			});*/
-		});
 		
 });
