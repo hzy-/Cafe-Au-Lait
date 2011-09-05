@@ -11,7 +11,7 @@ urlpatterns = patterns('',
 	#orders pages
 	(r'^orders/submit/$', 'orders.views.submit'),
 	(r'^orders/current/$', 'orders.views.current'),
-	(r'^orders/finish/$', 'orders.views.finish'),
+	(r'^orders/clear/$', 'orders.views.clear'),
 
 	#beverage page(s)
 	(r'^beverages/list/$', 'beverages.views.list'),

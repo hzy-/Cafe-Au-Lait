@@ -22,7 +22,7 @@ def submit(request):
 					if int(item['value']) > 0:
 						#checks if the order exists yet
 						if o == None:
-							o = Order(tendered="1000")
+							o = Order(tendered="1000", table="1")
 							o.save()
 						c = Content(order= o, quantity= item['value'])
 						#determines the type of the drink
@@ -56,8 +56,12 @@ def current(request):
 	if (error == True):
 		return HttpResponse('Something went wrong :(')
 
-def finish(request):
+def clear(request):
 	if request.is_ajax():
 		if request.method == 'POST':
-			json = simplejson.loads(request.raw_post_data)
-			
+			if request.POST['order']:
+				order = Order.objects.get(pk=int(request.POST['order']))
+				order.current = False
+				order.save()
+				cache.delete_many(['orders_current_orders', 'orders_current_contents'])
+				return HttpResponse('yay')

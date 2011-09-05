@@ -66,7 +66,7 @@ $(document).ready(function(){
 					url: "/orders/submit/",
 					data: inputs_json,
 					complete: function(msg){
-						alert( "Data Saved: " + msg );
+						//alert( "Data Saved: " + msg );
 						console.log(msg);
 					}
 				});
@@ -85,8 +85,8 @@ $(document).ready(function(){
 				//binds clear order click event
 				$(".clear_order").click(function() {
 					$(this).parent().hide();
-					$.post('orders/clear/', {order: $(this).attr("id").replace('order_', '')}, function(data){
-						alert("complete!");
+					$.post('/orders/clear/', {order: $(this).attr("id").replace('order_', '')}, function(data){
+						console.log("complete!");
 					});
 				});
 			});
